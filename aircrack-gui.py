@@ -17,7 +17,7 @@ os.system("clear")
 
 #Base
 raiz=Tk()
-raiz.title("AIRCRACK GUI - MRX13")
+raiz.title("aicrack-ng GUI - Mrx04programmer")
 raiz.geometry("550x550")
 raiz.resizable(False, False)
 raiz.config(bg="black")
