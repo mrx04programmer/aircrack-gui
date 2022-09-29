@@ -18,7 +18,7 @@ os.system("clear")
 #Base
 raiz=Tk()
 raiz.title("aicrack-ng GUI - Mrx04programmer")
-raiz.geometry("550x550")
+raiz.geometry("500x300")
 raiz.resizable(False, False)
 raiz.config(bg="black")
 
@@ -118,7 +118,7 @@ def clientD():
 	clientE=Entry(win, bg="white", fg="green", textvariable=client).place(x=50, y=40)
 	clientB=Button(win, bg="white", fg="green", text="Establecer", command=clienti).place(x=100, y=70)
 def dici():
-	messagebox.showinfo(message="El diccionario a sido establecido("+iface.get()+")", title="Diccionario")
+	messagebox.showinfo(message="El diccionario a sido establecido", title="Diccionario")
 def dicD():
 	win=Toplevel()
 	win.geometry("255x120")
@@ -139,16 +139,16 @@ def start():
 #Botones y título
 titulo=Label(miFrame,text="Aircrack-gui - MRX13", bg="black", fg="white").place(x=200, y=5)
 
-monOB=Button(miFrame,text="Desactivar modo monitor", fg="black", bg="white", command=monO).place(x=5, y=30)
-monAB=Button(miFrame,text="Activar modo monitor", fg="black", bg="white", command=monA).place(x=5, y=70)
-ifaceB=Button(miFrame,text="Establecer interfaz", fg="black", bg="white", command=ifaceD).place(x=5, y=110) 
-scan=Button(miFrame,text="Escanear objetivos", fg="black", bg="white", command=scanning).place(x=280, y=30)
-channelF=Button(miFrame,text="Establecer canal", fg="black", bg="white", command=channelD).place(x=280, y=70)
-bssidF=Button(miFrame,text="Establecer BSSID", fg="black", bg="white", command=bssidD).place(x=280, y=110)
-nameW=Button(miFrame,text="Establecer nombre de captura", fg="black", bg="white", command=nameD).place(x=260, y=150)
-clients=Button(miFrame,text="Esblecer Cliente", fg="black", bg="white", command=clientD).place(x=280, y=190)
-diccW=Button(miFrame,text="Establece diccionario", fg="black", bg="white", command=dicD).place(x=10, y=150)
-startB=Button(miFrame,text="Comenzar ataque", fg="black", bg="red", command=start,width=58).place(x=1, y=240)
+monOB=Button(miFrame,text="Desactivar \nmodo monitor", fg="green", bg="black", command=monO).place(x=5, y=30)
+monAB=Button(miFrame,text="Activar modo monitor", fg="green", bg="black", command=monA).place(x=5, y=85)
+ifaceB=Button(miFrame,text="Establecer interfaz", fg="green", bg="black", command=ifaceD).place(x=5, y=123) 
+scan=Button(miFrame,text="Escanear objetivos", fg="green", bg="black", command=scanning).place(x=280, y=30)
+channelF=Button(miFrame,text="Establecer canal", fg="green", bg="black", command=channelD).place(x=280, y=70)
+bssidF=Button(miFrame,text="Establecer BSSID", fg="green", bg="black", command=bssidD).place(x=280, y=110)
+nameW=Button(miFrame,text="Establecer \n nombre de captura", fg="green", bg="black", command=nameD).place(x=180, y=200)
+clients=Button(miFrame,text="Esblecer Cliente", fg="green", bg="black", command=clientD).place(x=280, y=150)
+diccW=Button(miFrame,text="Establece diccionario", fg="green", bg="black", command=dicD).place(x=5, y=160)
+startB=Button(miFrame,text="Comenzar ataque", fg="white", bg="green", command=start,width=62).place(x=0, y=270)
 
 
 
