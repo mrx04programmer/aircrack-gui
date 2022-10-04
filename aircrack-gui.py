@@ -159,7 +159,7 @@ def start():
 
 
 #Botones y título
-titulo=Label(miFrame,text="Aircrack-gui - MRX13", bg="black", fg="white").place(x=200, y=5)
+titulo=Label(miFrame,text="Aircrack-gui - Mrx04programmer", bg="black", fg="white").place(x=200, y=5)
 
 monOB=Button(miFrame,text="Desactivar \nmodo monitor", fg="green", bg="black", command=monO).place(x=5, y=30)
 monAB=Button(miFrame,text="Activar modo monitor", fg="green", bg="black", command=monA).place(x=5, y=85)
