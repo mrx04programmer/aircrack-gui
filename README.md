@@ -13,8 +13,10 @@ python3.x: https://www.python.org/
 
 
 ## Preview
-![image](https://user-images.githubusercontent.com/46001898/193942698-6a479fb1-419c-4e6f-b6d9-cc5aa305e258.png)
-![image](https://user-images.githubusercontent.com/46001898/193943480-15155182-8be3-47ab-bba4-3f7ddf037e1b.png)
+![image](https://user-images.githubusercontent.com/46001898/193946107-0d86edbd-e4ab-42d1-993b-604c3da05167.png)
+
+![image](https://user-images.githubusercontent.com/46001898/193946029-090a400c-505c-4b14-babf-ff285f2bc768.png)
+
 
 
 <img src="https://img.shields.io/badge/status-stable-blue?style=for-the-badge&logo=python&color=darkgreen&logoColor=yellow&labelColor=black">
